@@ -1,4 +1,49 @@
-export default function ECMoveAutoMockup() {
+"use client";
+
+import { useState } from "react";
+
+export default function ECMoveAutoPremium() {
+
+  const [form, setForm] = useState({
+    depart: "",
+    arrivee: "",
+    vehicule: "",
+    telephone: "",
+    email: "",
+    infos: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const envoyerDemande = () => {
+
+    const sujet = "Demande de convoyage EC Move Auto";
+
+    const message =
+`Nouvelle demande de convoyage
+
+Ville de départ : ${form.depart}
+
+Ville d'arrivée : ${form.arrivee}
+
+Type de véhicule : ${form.vehicule}
+
+Téléphone : ${form.telephone}
+
+Email : ${form.email}
+
+Informations complémentaires :
+${form.infos}`;
+
+    window.location.href =
+      `mailto:contact@ecmoveauto.fr?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(message)}`;
+  };
+
   return (
     <div className="bg-black text-white min-h-screen font-sans overflow-x-hidden scroll-smooth">
 
@@ -10,6 +55,7 @@ export default function ECMoveAutoMockup() {
             "linear-gradient(to right, rgba(0,0,0,0.92), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2000&auto=format&fit=crop')",
         }}
       >
+
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
@@ -72,6 +118,7 @@ export default function ECMoveAutoMockup() {
                   key={index}
                   className="border border-white/10 bg-white/5 backdrop-blur-xl rounded-2xl p-5 text-center hover:border-orange-500/40 transition-all"
                 >
+
                   <div className="text-3xl mb-3">
                     {item[0]}
                   </div>
@@ -214,16 +261,22 @@ export default function ECMoveAutoMockup() {
             <div className="grid gap-5">
 
               <input
+                name="depart"
+                onChange={handleChange}
                 placeholder="Ville de départ"
                 className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
               />
 
               <input
+                name="arrivee"
+                onChange={handleChange}
                 placeholder="Ville d'arrivée"
                 className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
               />
 
               <input
+                name="vehicule"
+                onChange={handleChange}
                 placeholder="Type de véhicule"
                 className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
               />
@@ -231,11 +284,15 @@ export default function ECMoveAutoMockup() {
               <div className="grid md:grid-cols-2 gap-5">
 
                 <input
+                  name="telephone"
+                  onChange={handleChange}
                   placeholder="Téléphone"
                   className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
                 />
 
                 <input
+                  name="email"
+                  onChange={handleChange}
                   placeholder="Email"
                   className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
                 />
@@ -244,17 +301,19 @@ export default function ECMoveAutoMockup() {
 
               <textarea
                 rows={4}
+                name="infos"
+                onChange={handleChange}
                 placeholder="Informations complémentaires"
                 className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
               />
 
-              {/* ENVOI */}
-              <a
-                href="mailto:contact@ecmoveauto.fr?subject=Demande%20de%20convoyage"
-                className="bg-orange-500 hover:bg-orange-600 transition-all py-5 rounded-2xl text-lg font-bold mt-3 shadow-xl shadow-orange-500/20 text-center"
+              {/* BOUTON ENVOI */}
+              <button
+                onClick={envoyerDemande}
+                className="bg-orange-500 hover:bg-orange-600 transition-all py-5 rounded-2xl text-lg font-bold mt-3 shadow-xl shadow-orange-500/20"
               >
                 Envoyer ma demande
-              </a>
+              </button>
 
             </div>
           </div>
@@ -292,6 +351,16 @@ export default function ECMoveAutoMockup() {
         </div>
       </footer>
 
+      {/* BOUTON WHATSAPP FLOTTANT */}
+      <a
+        href="https://wa.me/33632155235?text=Bonjour%20EC%20Move%20Auto"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl"
+      >
+        💬
+      </a>
+
     </div>
-  )
+  );
 }
