@@ -1,7 +1,7 @@
 export default function ECMoveAutoMockup() {
   return (
     <div className="bg-black text-white min-h-screen font-sans overflow-x-hidden scroll-smooth">
-      
+
       {/* HERO */}
       <section
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
@@ -13,8 +13,10 @@ export default function ECMoveAutoMockup() {
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-          
+
+          {/* TEXTE */}
           <div>
+
             <div className="mb-6 inline-block border border-orange-500/30 bg-orange-500/10 px-4 py-2 rounded-full text-orange-400 text-sm tracking-widest uppercase">
               Convoyage automobile premium
             </div>
@@ -33,9 +35,10 @@ export default function ECMoveAutoMockup() {
               </span>
             </p>
 
+            {/* BOUTONS */}
             <div className="flex flex-wrap gap-4">
 
-              {/* BOUTON DEVIS */}
+              {/* DEVIS */}
               <a
                 href="#devis"
                 className="bg-orange-500 hover:bg-orange-600 transition-all px-8 py-4 rounded-2xl text-lg font-bold shadow-2xl shadow-orange-500/20 inline-block"
@@ -43,7 +46,7 @@ export default function ECMoveAutoMockup() {
                 Demander un convoyage
               </a>
 
-              {/* BOUTON SERVICES */}
+              {/* SERVICES */}
               <a
                 href="#services"
                 className="border border-white/20 hover:border-orange-500 hover:text-orange-400 transition-all px-8 py-4 rounded-2xl text-lg font-semibold backdrop-blur-md inline-block"
@@ -53,20 +56,32 @@ export default function ECMoveAutoMockup() {
 
             </div>
 
+            {/* INFOS */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
+
               {[
                 ["🔒", "Sécurité", "Garantie"],
                 ["⚡", "Rapidité", "& Fiabilité"],
                 ["🇫🇷", "France", "Entière"],
                 ["🤝", "Service", "Professionnel"],
               ].map((item, index) => (
+
                 <div
                   key={index}
                   className="border border-white/10 bg-white/5 backdrop-blur-xl rounded-2xl p-5 text-center hover:border-orange-500/40 transition-all"
                 >
-                  <div className="text-3xl mb-3">{item[0]}</div>
-                  <div className="text-white font-semibold">{item[1]}</div>
-                  <div className="text-orange-400 text-sm">{item[2]}</div>
+                  <div className="text-3xl mb-3">
+                    {item[0]}
+                  </div>
+
+                  <div className="text-white font-semibold">
+                    {item[1]}
+                  </div>
+
+                  <div className="text-orange-400 text-sm">
+                    {item[2]}
+                  </div>
+
                 </div>
               ))}
             </div>
@@ -74,6 +89,7 @@ export default function ECMoveAutoMockup() {
 
           {/* IMAGE */}
           <div className="relative hidden lg:flex justify-center">
+
             <div className="absolute inset-0 blur-3xl bg-orange-500/10 rounded-full" />
 
             <img
@@ -81,8 +97,8 @@ export default function ECMoveAutoMockup() {
               alt="Voiture premium"
               className="relative z-10 rounded-[40px] shadow-2xl border border-orange-500/20"
             />
-          </div>
 
+          </div>
         </div>
       </section>
 
@@ -91,9 +107,11 @@ export default function ECMoveAutoMockup() {
         id="services"
         className="py-28 px-6 bg-gradient-to-b from-black to-zinc-950"
       >
+
         <div className="max-w-7xl mx-auto">
 
           <div className="text-center mb-16">
+
             <p className="text-orange-500 uppercase tracking-[0.3em] mb-4">
               Nos prestations
             </p>
@@ -106,9 +124,11 @@ export default function ECMoveAutoMockup() {
               Des solutions professionnelles pour particuliers,
               concessions et entreprises.
             </p>
+
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
             {[
               {
                 title: "Convoyage Premium",
@@ -135,10 +155,12 @@ export default function ECMoveAutoMockup() {
                 text: "Accompagnement professionnel et réactif.",
               },
             ].map((service, index) => (
+
               <div
                 key={index}
                 className="bg-zinc-900 border border-white/5 hover:border-orange-500/40 transition-all rounded-[30px] p-8 group"
               >
+
                 <div className="w-16 h-16 rounded-2xl bg-orange-500/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
                   🚘
                 </div>
@@ -150,6 +172,7 @@ export default function ECMoveAutoMockup() {
                 <p className="text-gray-400 leading-relaxed">
                   {service.text}
                 </p>
+
               </div>
             ))}
           </div>
@@ -161,11 +184,14 @@ export default function ECMoveAutoMockup() {
         id="devis"
         className="py-28 px-6 relative overflow-hidden"
       >
+
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,115,0,0.15),transparent_40%)]" />
 
         <div className="relative max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
 
+          {/* TEXTE */}
           <div>
+
             <p className="text-orange-500 uppercase tracking-[0.3em] mb-4">
               Demande rapide
             </p>
@@ -177,6 +203,7 @@ export default function ECMoveAutoMockup() {
             <p className="text-gray-400 text-xl leading-relaxed">
               Réservez une mission en quelques minutes avec notre formulaire dynamique.
             </p>
+
           </div>
 
           {/* FORMULAIRE */}
@@ -219,9 +246,13 @@ export default function ECMoveAutoMockup() {
                 className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
               />
 
-              <button className="bg-orange-500 hover:bg-orange-600 transition-all py-5 rounded-2xl text-lg font-bold mt-3 shadow-xl shadow-orange-500/20">
+              {/* ENVOI */}
+              <a
+                href="mailto:contact@ecmoveauto.fr?subject=Demande%20de%20convoyage"
+                className="bg-orange-500 hover:bg-orange-600 transition-all py-5 rounded-2xl text-lg font-bold mt-3 shadow-xl shadow-orange-500/20 text-center"
+              >
                 Envoyer ma demande
-              </button>
+              </a>
 
             </div>
           </div>
@@ -234,6 +265,7 @@ export default function ECMoveAutoMockup() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
 
           <div>
+
             <h3 className="text-3xl font-black">
               <span className="text-white">EC</span>{" "}
               <span className="text-orange-500">MoveAUTO</span>
@@ -242,12 +274,17 @@ export default function ECMoveAutoMockup() {
             <p className="text-gray-500 mt-2">
               Votre partenaire premium de convoyage automobile.
             </p>
+
           </div>
 
           <div className="text-gray-400 text-center md:text-right">
+
             <p>59 rue de Ponthieu, Bureau 326, 75008 Paris</p>
+
             <p>contact@ecmoveauto.fr</p>
+
             <p>06 32 15 52 35</p>
+
           </div>
 
         </div>
