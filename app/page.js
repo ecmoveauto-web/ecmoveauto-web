@@ -1,215 +1,232 @@
-
-export default function ECMoveAutoMockup() {
+export default function ECMoveAuto() {
   return (
-    <div className="bg-black text-white min-h-screen font-sans overflow-x-hidden">
+    <main className="bg-black text-white min-h-screen">
+
       {/* HERO */}
-      <section
-        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(0,0,0,0.92), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2000&auto=format&fit=crop')",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="mb-6 inline-block border border-orange-500/30 bg-orange-500/10 px-4 py-2 rounded-full text-orange-400 text-sm tracking-widest uppercase">
-              Convoyage automobile premium
-            </div>
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop')",
+          }}
+        />
 
-            <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
-              <span className="text-white">EC</span>{" "}
-              <span className="text-orange-500">MoveAUTO</span>
-            </h1>
+        <div className="absolute inset-0 bg-black/70" />
 
-            <p className="text-2xl md:text-3xl font-light leading-relaxed text-gray-200 mb-8">
-              On déplace vos véhicules,
-              <br />
-              pas vos <span className="text-orange-500 font-bold">problèmes.</span>
-            </p>
+        <div className="relative z-10 text-center px-6 max-w-5xl">
 
-            <div className="flex flex-wrap gap-4">
-              <button className="bg-orange-500 hover:bg-orange-600 transition-all px-8 py-4 rounded-2xl text-lg font-bold shadow-2xl shadow-orange-500/20">
-                Demander un convoyage
-              </button>
-
-              <button className="border border-white/20 hover:border-orange-500 hover:text-orange-400 transition-all px-8 py-4 rounded-2xl text-lg font-semibold backdrop-blur-md">
-                Voir nos services
-              </button>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
-              {[
-                ["🔒", "Sécurité", "Garantie"],
-                ["⚡", "Rapidité", "& Fiabilité"],
-                ["🇫🇷", "France", "Entière"],
-                ["🤝", "Service", "Professionnel"],
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="border border-white/10 bg-white/5 backdrop-blur-xl rounded-2xl p-5 text-center hover:border-orange-500/40 transition-all"
-                >
-                  <div className="text-3xl mb-3">{item[0]}</div>
-                  <div className="text-white font-semibold">{item[1]}</div>
-                  <div className="text-orange-400 text-sm">{item[2]}</div>
-                </div>
-              ))}
-            </div>
+          <div className="mb-6 inline-block border border-orange-500 px-4 py-2 rounded-full text-orange-400 uppercase tracking-widest text-sm">
+            Convoyage Automobile Premium
           </div>
 
-          <div className="relative hidden lg:flex justify-center">
-            <div className="absolute inset-0 blur-3xl bg-orange-500/10 rounded-full" />
+          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
+            EC <span className="text-orange-500">MOVE AUTO</span>
+          </h1>
 
-            <img
-              src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1600&auto=format&fit=crop"
-              alt="Voiture premium"
-              className="relative z-10 rounded-[40px] shadow-2xl border border-orange-500/20"
-            />
+          <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
+            Transport et livraison de véhicules partout en France.
+            <br />
+            Service rapide, sécurisé et professionnel.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-5">
+
+            <button className="bg-orange-500 hover:bg-orange-600 transition-all px-8 py-4 rounded-2xl text-lg font-bold shadow-2xl">
+              Obtenir un devis
+            </button>
+
+            <button className="border border-white/30 hover:border-orange-500 hover:text-orange-400 transition-all px-8 py-4 rounded-2xl text-lg">
+              WhatsApp Direct
+            </button>
+
           </div>
         </div>
       </section>
 
       {/* SERVICES */}
-      <section className="py-28 px-6 bg-gradient-to-b from-black to-zinc-950">
+      <section className="py-24 px-6 bg-zinc-950">
+
         <div className="max-w-7xl mx-auto">
+
           <div className="text-center mb-16">
+
             <p className="text-orange-500 uppercase tracking-[0.3em] mb-4">
-              Nos prestations
+              Nos Services
             </p>
+
             <h2 className="text-5xl font-black mb-6">
-              Services de convoyage haut de gamme
+              Des solutions adaptées à tous vos besoins
             </h2>
-            <p className="text-gray-400 text-xl max-w-3xl mx-auto">
-              Des solutions professionnelles pour particuliers, concessions et entreprises.
-            </p>
+
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
             {[
-              {
-                title: "Convoyage Premium",
-                text: "Transport sécurisé de véhicules premium et sportifs.",
-              },
-              {
-                title: "Livraison Concession",
-                text: "Livraison VN / VO partout en France.",
-              },
-              {
-                title: "Gestion de Flotte",
-                text: "Solutions entreprises et transferts de véhicules.",
-              },
-              {
-                title: "Suivi GPS",
-                text: "Localisation et suivi des missions en temps réel.",
-              },
-              {
-                title: "Rapport Digital",
-                text: "Photos et état du véhicule avant/après mission.",
-              },
-              {
-                title: "Support Prioritaire",
-                text: "Accompagnement professionnel et réactif.",
-              },
+              "Convoyage toutes distances",
+              "Livraison concessionnaires",
+              "Transfert inter-sites",
+              "Service express",
+              "Véhicules premium",
+              "Utilitaires",
             ].map((service, index) => (
+
               <div
                 key={index}
-                className="bg-zinc-900 border border-white/5 hover:border-orange-500/40 transition-all rounded-[30px] p-8 group"
+                className="bg-black border border-white/10 hover:border-orange-500 transition-all rounded-3xl p-8"
               >
-                <div className="w-16 h-16 rounded-2xl bg-orange-500/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
-                  🚘
-                </div>
 
-                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{service.text}</p>
+                <div className="text-4xl mb-6">🚘</div>
+
+                <h3 className="text-2xl font-bold mb-4">
+                  {service}
+                </h3>
+
+                <p className="text-gray-400">
+                  Service professionnel sécurisé et rapide partout en France.
+                </p>
+
               </div>
             ))}
+
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section className="py-24 px-6">
+
+        <div className="max-w-6xl mx-auto text-center">
+
+          <p className="text-orange-500 uppercase tracking-[0.3em] mb-4">
+            Fonctionnement
+          </p>
+
+          <h2 className="text-5xl font-black mb-16">
+            Comment ça fonctionne ?
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-8">
+
+            {[
+              "Demande de devis",
+              "Validation rapide",
+              "Prise en charge",
+              "Livraison finale",
+            ].map((step, index) => (
+
+              <div
+                key={index}
+                className="border border-white/10 rounded-3xl p-8 bg-zinc-950"
+              >
+
+                <div className="w-16 h-16 mx-auto rounded-full bg-orange-500 text-black flex items-center justify-center text-2xl font-black mb-6">
+                  {index + 1}
+                </div>
+
+                <h3 className="text-xl font-bold">
+                  {step}
+                </h3>
+
+              </div>
+            ))}
+
           </div>
         </div>
       </section>
 
       {/* FORMULAIRE */}
-      <section className="py-28 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,115,0,0.15),transparent_40%)]" />
+      <section className="py-24 px-6 bg-zinc-950">
 
-        <div className="relative max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
-          <div>
+        <div className="max-w-5xl mx-auto">
+
+          <div className="text-center mb-12">
+
             <p className="text-orange-500 uppercase tracking-[0.3em] mb-4">
-              Demande rapide
+              Contact
             </p>
 
-            <h2 className="text-5xl font-black mb-8 leading-tight">
-              Obtenez votre devis de convoyage
+            <h2 className="text-5xl font-black">
+              Demande de devis
             </h2>
 
-            <p className="text-gray-400 text-xl leading-relaxed">
-              Réservez une mission en quelques minutes avec notre formulaire dynamique.
-            </p>
           </div>
 
-          <div className="bg-zinc-950 border border-orange-500/20 rounded-[40px] p-8 shadow-2xl shadow-orange-500/10">
-            <div className="grid gap-5">
+          <div className="grid gap-5">
+
+            <input
+              placeholder="Nom / Société"
+              className="bg-black border border-white/10 rounded-2xl px-5 py-4"
+            />
+
+            <input
+              placeholder="Téléphone"
+              className="bg-black border border-white/10 rounded-2xl px-5 py-4"
+            />
+
+            <input
+              placeholder="Email"
+              className="bg-black border border-white/10 rounded-2xl px-5 py-4"
+            />
+
+            <div className="grid md:grid-cols-2 gap-5">
+
               <input
                 placeholder="Ville de départ"
-                className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
+                className="bg-black border border-white/10 rounded-2xl px-5 py-4"
               />
 
               <input
                 placeholder="Ville d'arrivée"
-                className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
+                className="bg-black border border-white/10 rounded-2xl px-5 py-4"
               />
 
-              <input
-                placeholder="Type de véhicule"
-                className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
-              />
-
-              <div className="grid md:grid-cols-2 gap-5">
-                <input
-                  placeholder="Téléphone"
-                  className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
-                />
-
-                <input
-                  placeholder="Email"
-                  className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
-                />
-              </div>
-
-              <textarea
-                rows={4}
-                placeholder="Informations complémentaires"
-                className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
-              />
-
-              <button className="bg-orange-500 hover:bg-orange-600 transition-all py-5 rounded-2xl text-lg font-bold mt-3 shadow-xl shadow-orange-500/20">
-                Envoyer ma demande
-              </button>
             </div>
+
+            <textarea
+              rows={5}
+              placeholder="Votre demande"
+              className="bg-black border border-white/10 rounded-2xl px-5 py-4"
+            />
+
+            <button className="bg-orange-500 hover:bg-orange-600 transition-all py-5 rounded-2xl text-lg font-bold">
+              Recevoir mon devis
+            </button>
+
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/5 py-10 px-6 bg-black">
+      <footer className="border-t border-white/10 py-10 px-6 bg-black">
+
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+
           <div>
+
             <h3 className="text-3xl font-black">
-              <span className="text-white">EC</span>{" "}
-              <span className="text-orange-500">MoveAUTO</span>
+              EC <span className="text-orange-500">MOVE AUTO</span>
             </h3>
+
             <p className="text-gray-500 mt-2">
-              Votre partenaire premium de convoyage automobile.
+              Convoyage automobile premium partout en France.
             </p>
+
           </div>
 
-          <div className="text-gray-400 text-center md:text-right">
-            <p>59 rue de Ponthieu, Bureau 326, 75008 Paris</p>
-            <p>contact@ecmoveauto.fr</p>
+          <div className="text-center md:text-right text-gray-400">
+
             <p>06 32 15 52 35</p>
+
+            <p>ecmoveauto@gmail.com</p>
+
+            <p>59 rue de Ponthieu, 75008 Paris</p>
+
           </div>
         </div>
       </footer>
-    </div>
-  )
+    </main>
+  );
 }
