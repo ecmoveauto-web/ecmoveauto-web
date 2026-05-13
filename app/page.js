@@ -69,7 +69,7 @@ ${form.infos}`;
 
             <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
               <span className="text-white">EC</span>{" "}
-              <span className="text-orange-500">MoveAUTO</span>
+              <span className="text-orange-500">Move Auto</span>
             </h1>
 
             <p className="text-2xl md:text-3xl font-light leading-relaxed text-gray-200 mb-8">
