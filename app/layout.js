@@ -1,3 +1,5 @@
+import "./globals.css";
+
 export const metadata = {
   title: "EC MOVE AUTO",
   description: "Convoyage automobile premium",
