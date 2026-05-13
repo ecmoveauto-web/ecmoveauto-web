@@ -68,88 +68,102 @@ ${form.infos}`;
   return (
     <div className="bg-black text-white min-h-screen font-sans overflow-x-hidden scroll-smooth">
 
-      {/* HERO */}
-      <section
-        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(0,0,0,0.92), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2000&auto=format&fit=crop')",
-        }}
-      >
+      {/* HERO VIDEO PREMIUM */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+        {/* VIDEO BACKGROUND */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source
+            src="https://cdn.coverr.co/videos/coverr-black-sports-car-driving-1560678663207?download=1080p"
+            type="video/mp4"
+          />
+        </video>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+        {/* OVERLAYS */}
+        <div className="absolute inset-0 bg-black/70" />
+
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-orange-950/30" />
+
+        {/* GLOW */}
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-orange-500/10 blur-3xl rounded-full" />
+
+        {/* CONTENU */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
 
           {/* TEXTE */}
           <div>
 
-            <div className="mb-6 inline-block border border-orange-500/30 bg-orange-500/10 px-4 py-2 rounded-full text-orange-400 text-sm tracking-widest uppercase">
+            <div className="mb-6 inline-block border border-orange-500/30 bg-orange-500/10 px-4 py-2 rounded-full text-orange-400 text-sm tracking-[0.3em] uppercase backdrop-blur-xl">
               Convoyage automobile premium
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
-              <span className="text-white">EC</span>{" "}
-              <span className="text-orange-500">Move Auto</span>
+            <h1 className="text-6xl md:text-8xl font-black leading-none mb-8">
+
+              <span className="block text-white">
+                EC
+              </span>
+
+              <span className="block text-orange-500">
+                MoveAUTO
+              </span>
+
             </h1>
 
-            <p className="text-2xl md:text-3xl font-light leading-relaxed text-gray-200 mb-8">
-              On déplace vos véhicules,
+            <p className="text-2xl md:text-3xl text-gray-200 leading-relaxed mb-10 max-w-2xl">
+              Transport haut de gamme de véhicules partout en France.
               <br />
-              pas vos{" "}
-              <span className="text-orange-500 font-bold">
-                problèmes.
-              </span>
+              Rapide. Sécurisé. Professionnel.
             </p>
 
             {/* BOUTONS */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-5">
 
               {/* DEVIS */}
               <a
                 href="#devis"
-                className="bg-orange-500 hover:bg-orange-600 transition-all px-8 py-4 rounded-2xl text-lg font-bold shadow-2xl shadow-orange-500/20 inline-block"
+                className="bg-orange-500 hover:bg-orange-600 transition-all px-9 py-5 rounded-2xl text-lg font-bold shadow-2xl shadow-orange-500/30 hover:scale-105"
               >
                 Demander un convoyage
               </a>
 
               {/* WHATSAPP */}
               <a
-                href="https://wa.me/33632155235?text=Bonjour%20EC%20Move%20Auto,%20je%20souhaite%20obtenir%20un%20devis%20de%20convoyage."
+                href="https://wa.me/33632155235?text=Bonjour%20EC%20Move%20Auto"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-white/20 hover:border-orange-500 hover:text-orange-400 transition-all px-8 py-4 rounded-2xl text-lg font-semibold backdrop-blur-md inline-block"
+                className="border border-white/20 bg-white/5 backdrop-blur-xl hover:border-orange-500 hover:text-orange-400 transition-all px-9 py-5 rounded-2xl text-lg font-semibold"
               >
                 WhatsApp Direct
               </a>
 
             </div>
 
-            {/* INFOS */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
+            {/* STATS */}
+            <div className="grid grid-cols-3 gap-6 mt-16">
 
               {[
-                ["🔒", "Sécurité", "Garantie"],
-                ["⚡", "Rapidité", "& Fiabilité"],
-                ["🇫🇷", "France", "Entière"],
-                ["🤝", "Service", "Professionnel"],
+                ["500+", "Véhicules"],
+                ["24h", "Réactivité"],
+                ["France", "Entière"],
               ].map((item, index) => (
 
                 <div
                   key={index}
-                  className="border border-white/10 bg-white/5 backdrop-blur-xl rounded-2xl p-5 text-center hover:border-orange-500/40 transition-all"
+                  className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 text-center"
                 >
 
-                  <div className="text-3xl mb-3">
+                  <div className="text-4xl font-black text-orange-500 mb-2">
                     {item[0]}
                   </div>
 
-                  <div className="text-white font-semibold">
+                  <div className="text-gray-300">
                     {item[1]}
-                  </div>
-
-                  <div className="text-orange-400 text-sm">
-                    {item[2]}
                   </div>
 
                 </div>
@@ -157,19 +171,45 @@ ${form.infos}`;
             </div>
           </div>
 
-          {/* IMAGE */}
-          <div className="relative hidden lg:flex justify-center">
+          {/* CARD PREMIUM */}
+          <div className="hidden lg:flex justify-center">
 
-            <div className="absolute inset-0 blur-3xl bg-orange-500/10 rounded-full" />
+            <div className="relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[40px] p-10 w-full max-w-md shadow-2xl">
 
-            <img
-              src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1600&auto=format&fit=crop"
-              alt="Voiture premium"
-              className="relative z-10 rounded-[40px] shadow-2xl border border-orange-500/20"
-            />
+              <div className="absolute inset-0 rounded-[40px] border border-orange-500/10" />
 
+              <h3 className="text-3xl font-black mb-8">
+                Pourquoi choisir EC Move Auto ?
+              </h3>
+
+              <div className="space-y-6">
+
+                {[
+                  "✔ Véhicules assurés",
+                  "✔ Suivi en temps réel",
+                  "✔ Chauffeurs professionnels",
+                  "✔ France & Europe",
+                  "✔ Service premium",
+                ].map((item, index) => (
+
+                  <div
+                    key={index}
+                    className="bg-black/30 border border-white/5 rounded-2xl px-5 py-4 text-lg"
+                  >
+                    {item}
+                  </div>
+
+                ))}
+              </div>
+            </div>
           </div>
         </div>
+
+        {/* SCROLL */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white/60 text-3xl">
+          ↓
+        </div>
+
       </section>
 
       {/* SERVICES */}
@@ -328,7 +368,6 @@ ${form.infos}`;
                 className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
               />
 
-              {/* ENVOI */}
               <button
                 onClick={envoyerDemande}
                 className="bg-orange-500 hover:bg-orange-600 transition-all py-5 rounded-2xl text-lg font-bold mt-3 shadow-xl shadow-orange-500/20"
