@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ECMoveAutoPremium() {
 
@@ -12,6 +12,20 @@ export default function ECMoveAutoPremium() {
     email: "",
     infos: "",
   });
+
+  const [showTopButton, setShowTopButton] = useState(false);
+
+  useEffect(() => {
+
+    const handleScroll = () => {
+      setShowTopButton(window.scrollY > 500);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+
+  }, []);
 
   const handleChange = (e) => {
     setForm({
@@ -42,6 +56,13 @@ ${form.infos}`;
 
     window.location.href =
       `mailto:contact@ecmoveauto.fr?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(message)}`;
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -307,7 +328,7 @@ ${form.infos}`;
                 className="bg-black border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-orange-500"
               />
 
-              {/* BOUTON ENVOI */}
+              {/* ENVOI */}
               <button
                 onClick={envoyerDemande}
                 className="bg-orange-500 hover:bg-orange-600 transition-all py-5 rounded-2xl text-lg font-bold mt-3 shadow-xl shadow-orange-500/20"
@@ -351,7 +372,7 @@ ${form.infos}`;
         </div>
       </footer>
 
-      {/* BOUTON WHATSAPP FLOTTANT */}
+      {/* WHATSAPP FLOTTANT */}
       <a
         href="https://wa.me/33632155235?text=Bonjour%20EC%20Move%20Auto"
         target="_blank"
@@ -360,6 +381,16 @@ ${form.infos}`;
       >
         💬
       </a>
+
+      {/* BOUTON RETOUR HAUT */}
+      {showTopButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-28 right-6 z-50 bg-orange-500 hover:bg-orange-600 transition-all w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-2xl"
+        >
+          ↑
+        </button>
+      )}
 
     </div>
   );
