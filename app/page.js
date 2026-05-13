@@ -46,12 +46,14 @@ export default function ECMoveAutoMockup() {
                 Demander un convoyage
               </a>
 
-              {/* SERVICES */}
+              {/* WHATSAPP */}
               <a
-                href="#services"
+                href="https://wa.me/33632155235?text=Bonjour%20EC%20Move%20Auto,%20je%20souhaite%20obtenir%20un%20devis%20de%20convoyage."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border border-white/20 hover:border-orange-500 hover:text-orange-400 transition-all px-8 py-4 rounded-2xl text-lg font-semibold backdrop-blur-md inline-block"
               >
-                Voir nos services
+                WhatsApp Direct
               </a>
 
             </div>
