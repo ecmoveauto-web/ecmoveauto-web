@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [showTopButton, setShowTopButton] = useState(false);
+  const [missions, setMissions] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,7 +13,19 @@ export default function Home() {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    const interval = setInterval(() => {
+      setMissions((prev) => {
+        if (prev < 248) {
+          return prev + 2;
+        }
+        return 248;
+      });
+    }, 20);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearInterval(interval);
+    };
   }, []);
 
   const scrollToDevis = () => {
@@ -27,6 +40,49 @@ export default function Home() {
 
   return (
     <main className="bg-black text-white overflow-hidden">
+      {/* NAVBAR PREMIUM */}
+      <nav className="fixed top-0 left-0 w-full z-[9999] backdrop-blur-xl bg-black/30 border-b border-white/10">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
+          {/* LOGO ANIMÉ */}
+          <div className="text-3xl font-black tracking-wide">
+            <span className="text-white animate-pulse">EC</span>{" "}
+            <span className="text-orange-500">MOVE AUTO</span>
+          </div>
+
+          <div className="hidden md:flex items-center gap-10 text-lg">
+            <a
+              href="#services"
+              className="hover:text-orange-500 transition"
+            >
+              Services
+            </a>
+
+            <a
+              href="#missions"
+              className="hover:text-orange-500 transition"
+            >
+              Missions
+            </a>
+
+            <a
+              href="#devis"
+              className="hover:text-orange-500 transition"
+            >
+              Devis
+            </a>
+
+            <a
+              href="https://wa.me/33632155235"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-orange-500 hover:bg-orange-600 px-5 py-3 rounded-xl transition"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </nav>
+
       {/* HERO VIDEO */}
       <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
         <video
@@ -79,8 +135,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* COMPTEUR MISSIONS */}
+      <section
+        id="missions"
+        className="py-24 bg-gradient-to-b from-black to-zinc-950"
+      >
+        <div className="max-w-6xl mx-auto text-center px-6">
+          <h2 className="text-5xl font-black mb-12">
+            Nos résultats parlent d’eux-mêmes
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
+              <h3 className="text-6xl font-black text-orange-500 mb-4">
+                {missions}+
+              </h3>
+
+              <p className="text-gray-300 text-xl">
+                Missions réalisées
+              </p>
+            </div>
+
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
+              <h3 className="text-6xl font-black text-orange-500 mb-4">
+                24h
+              </h3>
+
+              <p className="text-gray-300 text-xl">
+                Réactivité moyenne
+              </p>
+            </div>
+
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
+              <h3 className="text-6xl font-black text-orange-500 mb-4">
+                France
+              </h3>
+
+              <p className="text-gray-300 text-xl">
+                Couverture nationale
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
-      <section className="py-28 px-6 bg-gradient-to-b from-black to-zinc-950">
+      <section
+        id="services"
+        className="py-28 px-6 bg-black"
+      >
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl font-black text-center mb-20">
             Nos Services Premium
@@ -99,73 +202,17 @@ export default function Home() {
                 key={index}
                 className="bg-zinc-900 border border-zinc-800 hover:border-orange-500 p-10 rounded-3xl transition-all duration-300 hover:-translate-y-2"
               >
-                <div className="text-orange-500 text-5xl mb-6">🚘</div>
+                <div className="text-orange-500 text-5xl mb-6">
+                  🚘
+                </div>
 
-                <h3 className="text-2xl font-bold mb-4">{service}</h3>
+                <h3 className="text-2xl font-bold mb-4">
+                  {service}
+                </h3>
 
                 <p className="text-gray-400">
-                  Service premium professionnel avec prise en charge rapide et
-                  sécurisée.
+                  Service premium professionnel avec prise en charge rapide et sécurisée.
                 </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* POURQUOI NOUS */}
-      <section className="py-28 px-6 bg-black">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-black text-center mb-20">
-            Pourquoi choisir EC Move Auto ?
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-10">
-            {[
-              "Ponctualité professionnelle",
-              "Convoyage sécurisé",
-              "Suivi en temps réel",
-              "Disponibilité rapide",
-              "Image premium",
-              "Intervention partout en France",
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-zinc-900 p-8 rounded-2xl border border-zinc-800 hover:border-orange-500 transition-all duration-300"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="bg-orange-500 w-4 h-4 rounded-full"></div>
-
-                  <p className="text-xl">{item}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* GALERIE */}
-      <section className="py-28 px-6 bg-zinc-950">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-black text-center mb-20">
-            Véhicules transportés
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1400",
-              "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1400",
-              "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1400",
-            ].map((img, index) => (
-              <div
-                key={index}
-                className="overflow-hidden rounded-3xl group"
-              >
-                <img
-                  src={img}
-                  alt="Véhicule"
-                  className="w-full h-[350px] object-cover group-hover:scale-110 transition-all duration-700"
-                />
               </div>
             ))}
           </div>
@@ -175,61 +222,47 @@ export default function Home() {
       {/* DEVIS */}
       <section
         id="devis"
-        className="py-28 px-6 bg-black border-t border-zinc-900"
+        className="py-28 px-6 bg-zinc-950"
       >
         <div className="max-w-5xl mx-auto">
           <h2 className="text-6xl font-black text-center mb-16">
             Demande de devis
           </h2>
 
-          <form
-            action={`mailto:contact@ecmoveauto.fr?subject=Demande de devis convoyage`}
-            method="post"
-            encType="text/plain"
-            className="space-y-6"
-          >
+          <form className="space-y-6">
             <input
               type="text"
-              name="Nom"
               placeholder="Nom / Société"
-              required
               className="w-full bg-black border border-zinc-800 rounded-2xl p-6 text-xl focus:outline-none focus:border-orange-500"
             />
 
             <input
               type="tel"
-              name="Téléphone"
               placeholder="Téléphone"
-              required
               className="w-full bg-black border border-zinc-800 rounded-2xl p-6 text-xl focus:outline-none focus:border-orange-500"
             />
 
             <input
               type="email"
-              name="Email"
               placeholder="Email"
-              required
               className="w-full bg-black border border-zinc-800 rounded-2xl p-6 text-xl focus:outline-none focus:border-orange-500"
             />
 
             <div className="grid md:grid-cols-2 gap-6">
               <input
                 type="text"
-                name="Départ"
                 placeholder="Ville de départ"
                 className="w-full bg-black border border-zinc-800 rounded-2xl p-6 text-xl focus:outline-none focus:border-orange-500"
               />
 
               <input
                 type="text"
-                name="Arrivée"
                 placeholder="Ville d'arrivée"
                 className="w-full bg-black border border-zinc-800 rounded-2xl p-6 text-xl focus:outline-none focus:border-orange-500"
               />
             </div>
 
             <textarea
-              name="Message"
               rows="6"
               placeholder="Votre demande"
               className="w-full bg-black border border-zinc-800 rounded-2xl p-6 text-xl focus:outline-none focus:border-orange-500"
@@ -237,7 +270,7 @@ export default function Home() {
 
             <button
               type="submit"
-              className="w-full bg-orange-500 hover:bg-orange-600 py-6 rounded-2xl text-2xl font-bold transition-all duration-300 hover:scale-[1.02] shadow-2xl shadow-orange-500/30"
+              className="w-full bg-orange-500 hover:bg-orange-600 py-6 rounded-2xl text-2xl font-bold transition-all duration-300 hover:scale-[1.02]"
             >
               Recevoir mon devis
             </button>
